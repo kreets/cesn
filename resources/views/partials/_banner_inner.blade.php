@@ -1,6 +1,6 @@
 <!--Banner Inner-->
 <section>
-    <div class="lgx-banner lgx-banner-inner">
+    <div class="lgx-banner lgx-banner-inner" style="background: url('{{uploaded(setting('site.cover_image'))}}') center center no-repeat;">
         <div class="lgx-page-inner">
             <div class="container">
                 <div class="row">

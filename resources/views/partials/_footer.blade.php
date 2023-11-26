@@ -3,19 +3,7 @@
     <div id="lgx-footer" class="lgx-footer lgx-footer-black"> <!--lgx-footer-white-->
         <div class="lgx-inner-footer">
             <div class="lgx-subscriber-area"> <!--lgx-subscriber-area-indiv-->
-                <div class="container">
-                    <div class="lgx-subscriber-inner">  <!--lgx-subscriber-inner-indiv-->
-                        <h3 class="subscriber-title">Hírlevél</h3>
-                        <form class="lgx-subscribe-form" >
-                            <div class="form-group form-group-email">
-                                <input type="email" id="subscribe" placeholder="írja be e-mail címét..." class="form-control lgx-input-form form-control"  />
-                            </div>
-                            <div class="form-group form-group-submit">
-                                <button type="submit" name="lgx-submit" id="lgx-submit" class="lgx-btn lgx-submit"><span>feliratkozás</span></button>
-                            </div>
-                        </form> <!--//.SUBSCRIBE-->
-                    </div>
-                </div>
+                @include('partials._subscribe_newsletter')
             </div>
             <div class="container">
                 <div class="lgx-footer-area lgx-footer-area-center">

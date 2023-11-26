@@ -1,6 +1,6 @@
 <!--BANNER-->
 <section>
-    <div class="lgx-banner lgx-banner16">
+    <div class="lgx-banner lgx-banner16" style="background: url('{{uploaded(setting('site.cover_image'))}}') top center no-repeat">
         <div class="lgx-banner-style">
             <div class="lgx-inner lgx-inner-fixed">
                 <div class="container">
@@ -23,7 +23,7 @@
                                                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <iframe id="modalvideo" src="https://www.youtube.com/embed/oSPR5Go05Vg" allowfullscreen></iframe>
+                                                        <iframe id="modalvideo" src="{{setting('site.promo_video')}}" allowfullscreen></iframe>
                                                     </div>
                                                 </div>
                                             </div>

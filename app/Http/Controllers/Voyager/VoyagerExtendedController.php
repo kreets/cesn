@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Voyager;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use TCG\Voyager\Events\BreadDataUpdated;
 use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Http\Controllers\Traits\BreadRelationshipParser;
@@ -54,9 +55,9 @@ class VoyagerExtendedController extends BaseVoyagerBaseController
             }
         }
 
-        $keptImages = $request->input('kept_images', []); // Array of kept image IDs
+        /*$keptImages = $request->input('kept_images', []); // Array of kept image IDs
 
-        /*if($data->images){
+        if($data->images){
             $data->images->each(function ($image) use ($keptImages) {
                 if (!in_array($image->id, $keptImages)) {
                     Storage::disk('public')->delete($image->image_path);

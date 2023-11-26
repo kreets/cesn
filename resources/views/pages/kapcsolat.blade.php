@@ -13,7 +13,9 @@
 
                         <div class="col-sm-12 col-md-6 col-md-offset-3">
 
-                            <form method="POST" class="lgx-contactform" action="{{route('kapcsolat')}}">
+                            <form method="POST" class="lgx-contactform" action="{{route('kapcsolat')}}"  data-racaptchasitekey="{{env('RECAPTCHA_SITE_KEY')}}">
+                                @csrf
+                                <input type="hidden" name="recaptcha" class="recaptcha">
                                 <div class="form-group">
                                     <input type="text" name="lgxname" class="form-control lgxname" id="contact_name" placeholder="Név" required>
                                 </div>
@@ -23,7 +25,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="text" name="lgxsubject" class="form-control lgxsubject" id="contact_address" placeholder="Cím" required>
+                                    <input type="text" name="lgxsubject" class="form-control lgxsubject" id="contact_address" placeholder="Tárgy" required>
                                 </div>
 
                                 <div class="form-group">

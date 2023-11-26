@@ -16,7 +16,7 @@
                     <div class="col-xs-12 col-sm-6 col-md-4">
                         <div class="lgx-single-speaker">
                             <figure>
-                                <a class="profile-img"><img src="http://placehold.it/800x860" alt="Speaker"/></a>
+                                <a class="profile-img"><img src="{{uploaded($program->getImage())}}" alt="{{$program->title}}"/></a>
                                 <figcaption>
                                     <div class="social-group">
                                         <a class="sp-tw" href="#"><i class="fa fa-twitter"></i></a>

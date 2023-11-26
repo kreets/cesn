@@ -5789,11 +5789,10 @@ to {
     padding: 27rem 0 20rem;
 }
 .lgx-banner-music, .lgx-banner12, .lgx-banner13, .lgx-banner14, .lgx-banner16, .lgx-banner2, .lgx-banner3, .lgx-banner4, .lgx-banner5, .lgx-banner6, .lgx-banner7 {
-    background: url(..//img/cvr.png) top center no-repeat;
-    -webkit-background-size: cover;
-    -o-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
+    -webkit-background-size: cover !important;
+    -o-background-size: cover !important;
+    -moz-background-size: cover !important;
+    background-size: cover !important;
 }
 .lgx-banner-christmas {
     background: url(http://placehold.it/1920x912) bottom center no-repeat;
@@ -10182,11 +10181,10 @@ blockquote.lgx-testi-single:before {
     padding: 17rem 0 9rem;
 }
 .lgx-banner-inner {
-    background: url(..//img/cvr.png) center center no-repeat;
-    -webkit-background-size: cover;box-shadow: inset 0 0 0 2000px rgba(50, 0, 20, 0.5);
-    -o-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
+    -webkit-background-size: cover;box-shadow: inset 0 0 0 2000px rgba(50, 0, 20, 0.5) !important;
+    -o-background-size: cover !important;
+    -moz-background-size: cover !important;
+    background-size: cover !important;
 }
 .lgx-banner-inner .lgx-heading-area {
     margin-bottom: 0;

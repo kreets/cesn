@@ -16,7 +16,7 @@
                     <div class="col-xs-12 col-sm-6">
                         <div class="lgx-single-news">
                             <figure>
-                                <a href="{{route('blogpost', $post->slug)}}"><img src="{{asset($post->firstImageSrc())}}" alt=""></a>
+                                <a href="{{route('blogpost', $post->slug)}}"><img src="{{uploaded($post->leadImg())}}" alt=""></a>
                             </figure>
                             <div class="single-news-info">
                                 <div class="meta-wrapper">

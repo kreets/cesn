@@ -32,7 +32,7 @@
                                                             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseProg{{$program->id}}" aria-expanded="true" aria-controls="collapseProg{{$program->id}}">
                                                                 <div class="lgx-single-schedule">
                                                                     <div class="author">
-                                                                        <img src="http://placehold.it/800x800" alt="Speaker"/>
+                                                                        <img src="{{uploaded($program->getImage())}}" alt="{{$program->performer}}"/>
                                                                     </div>
                                                                     <div class="schedule-info">
                                                                         <h4 class="time">{{$program->start_time}} - {{$program->end_time}}</h4>

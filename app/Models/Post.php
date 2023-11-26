@@ -11,7 +11,7 @@ class Post extends PostModel{
     use QueryCacheable;
     protected $cacheFor = 3600;
 
-    const PLACEHOLDER = "http://placehold.it/1144x690";
+    const PLACEHOLDER = "https://placehold.it/1144x690";
 
     public function images()
     {
@@ -27,6 +27,10 @@ class Post extends PostModel{
 
     public function firstImageSrc(){
         return ($this->images()->first() ? $this->images()->first()->image_path : self::PLACEHOLDER);
+    }
+
+    public function leadImg(){
+        return ($this->preview ?? self::PLACEHOLDER);
     }
 
 }

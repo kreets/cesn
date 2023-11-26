@@ -242,7 +242,7 @@
                             <div class="multiple-images">
                                 @if(isset($dataTypeContent->images) && count($dataTypeContent->images) > 0)
                                     @foreach($dataTypeContent->images as $image)
-                                        <img src="{{ filter_var($image->image_path, FILTER_VALIDATE_URL) ? $image->image_path : Voyager::image($image->image_path) }}" style="width:100px; height:auto; margin-right: 5px;">
+                                        <img src="{{ filter_var($image->image_path, FILTER_VALIDATE_URL) ? $image->image_path : uploaded($image->image_path) }}" style="width:100px; height:auto; margin-right: 5px;">
                                     @endforeach
                                 @endif
                             </div>

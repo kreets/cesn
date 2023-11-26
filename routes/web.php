@@ -19,7 +19,10 @@ Route::group(['prefix' => 'admin'], function () {
 Route::get('/', 'App\Http\Controllers\SiteController@index')->name('home');
 Route::get('/blog/{slug}', 'App\Http\Controllers\SiteController@blogpost')->name('blogpost');
 Route::post('/kapcsolat', 'App\Http\Controllers\SiteController@kapcsolat')->name('kapcsolat');
+Route::post('/hirlevel/feliratkozok', 'App\Http\Controllers\SiteController@hirlevel_feliratkozas')->name('subscribe');
+Route::post('/hirlevel/leiratkozas', 'App\Http\Controllers\SiteController@hirlevel_leiratkozas');
 Route::get('/{page}', 'App\Http\Controllers\PageController@switcher')->name('page');
+
 
 
 

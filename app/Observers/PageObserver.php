@@ -15,4 +15,9 @@ class PageObserver
     {
         $page->flushQueryCache();
     }
+
+    public function deleted(Page $page)
+    {
+        $page->flushQueryCache();
+    }
 }

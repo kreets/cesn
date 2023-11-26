@@ -252,7 +252,7 @@
                 loop: true,
                 autoplay:true,
                 dots: false,
-                navText: ["<img src='./assets/img/arrow-left.png'>","<img src='./assets/img/arrow-right.png'>"],
+                navText: ["<img src='/assets/img/arrow-left.png'>","<img src='/assets/img/arrow-right.png'>"],
                 autoplayTimeout: 5000,
                 autoplaySpeed: 500,
                 nav: true,
@@ -321,7 +321,7 @@
                 loop: true,
                 autoplay:true,
                 dots: true,
-                navText: ["<img src='./assets/img/arrow-left-ash.png'>","<img src='./assets/img/arrow-right-ash.png'>"],
+                navText: ["<img src='/assets/img/arrow-left-ash.png'>","<img src='/assets/img/arrow-right-ash.png'>"],
                 autoplayTimeout: 5000,
                 autoplaySpeed: 500,
                 nav: true,
@@ -478,48 +478,56 @@
 
         $('form.lgx-subscribe-form').on('submit', function (evnt) {
             evnt.preventDefault();
-            //  console.log(lgx_path);
+            console.log(lgx_path);
             // console.log('subs submit');
             var $subform = $(this);
             var emailInput = $('form.lgx-subscribe-form').find('input#subscribe');
+
             if (isEmail(emailInput.val())) {
-                // console.log('ok');
-                $.ajax({
-                    url: lgx_path + '/assets/php/subscribe.php',
-                    type: 'post',
-                    data: {'email': emailInput.val().toLowerCase()},
-                    beforeSubmit: function (argument) {
-                        // body...
-                    },
-                    success: function (ajaxResponse) {
 
-                        var ajaxResponse = $.parseJSON(ajaxResponse);
-                        // console.log(ajaxResponse);
+                grecaptcha.ready(function() {
+                    grecaptcha.execute($subform.data('racaptchasitekey'), { action: 'newsletter' }).then(function(token) {
+                        $subform.find('input[name="recaptcha"]').val(token);
+                        $.ajax({
+                            url: $subform.attr('action'),
+                            type: 'post',
+                            data: $subform.serialize(),
+                            beforeSubmit: function (argument) {
+                                // body...
+                            },
+                            success: function (ajaxResponse) {
 
-                        $('#lgx-subalert').addClass("alert alert-success lgx-sub-alert").html(ajaxResponse.message);
+                                var ajaxResponse = $.parseJSON(ajaxResponse);
+                                // console.log(ajaxResponse);
 
-                        try {
-                            var ajaxResponse = $.parseJSON(ajaxResponse);
-                            if (!ajaxResponse.error) {
-                                emailInput.css('color', '#0f0');
-                            } else {
-                                emailInput.removeAttr('style'); //css('color', '#f00');
-                                throw ajaxResponse.message;
+                                $('#lgx-subalert').addClass("alert alert-success lgx-sub-alert").html(ajaxResponse.message);
+
+                                try {
+                                    var ajaxResponse = $.parseJSON(ajaxResponse);
+                                    if (!ajaxResponse.error) {
+                                        emailInput.css('color', '#0f0');
+                                    } else {
+                                        emailInput.removeAttr('style'); //css('color', '#f00');
+                                        throw ajaxResponse.message;
+                                    }
+                                    //alert( ajaxResponse.message );
+                                } catch (e) {
+                                    // e.message;
+                                    // alert(e.message );
+
+                                }
+                            },
+                            error: function (argument) {
+                                var ajaxResponse = $.parseJSON(ajaxResponse);
+                                $('#lgx-subalert').addClass("alert alert-danger lgx-sub-alert").html(ajaxResponse.message);
+                                // body...
                             }
-                            //alert( ajaxResponse.message );
-                        } catch (e) {
-                            // e.message;
-                            // alert(e.message );
-
-                        }
-                    },
-                    error: function (argument) {
-                        var ajaxResponse = $.parseJSON(ajaxResponse);
-                        $('#lgx-subalert').addClass("alert alert-danger lgx-sub-alert").html(ajaxResponse.message);
-                        // body...
-                    }
+                        });
+                        $subform[0].reset();
+                    });
                 });
-                $subform[0].reset();
+
+
             } else {
                 emailInput.css('color', '#f00');
                 return false;
@@ -554,53 +562,58 @@
                 //console.log(form);
                 var $form = $(form);
                 //console.log($form.serialize());
-                $.ajax({
-                    url: lgx_path + '/assets/php/contact.php',
-                    type: 'post',
-                    data: $form.serialize(),
-                    beforeSubmit: function (argument) {
-                        //ajax loading icon
-                    },
-                    success: function (ajaxResponse) {
-                        try {
-                            var ajaxResponse = $.parseJSON(ajaxResponse);
-                            if (ajaxResponse.error) {
-                                //for field error
-                                //console.log(ajaxResponse.error_field);
-                                for (var i = 0; i < ajaxResponse.error_field.length; i++) {
-                                    if ($('p#' + ajaxResponse.error_field[i] + '-error').length) {
-                                        $('p#' + ajaxResponse.error_field[i] + '-error').text(ajaxResponse.message[ajaxResponse.error_field[i]]);
-                                    } else {
-                                        $('#' + ajaxResponse.error_field[i]).after('<p id="' + ajaxResponse.error_field[i] + '-error" class="help-block">' + ajaxResponse.message[ajaxResponse.error_field[i]] + '</p>');
-                                    }
-                                }
+                grecaptcha.ready(function() {
+                    grecaptcha.execute($form.data('racaptchasitekey'), { action: 'newsletter' }).then(function(token) {
+                        $form.find('input[name="recaptcha"]').val(token);
+                        $.ajax({
+                            url: $form.attr('action'),
+                            type: 'post',
+                            data: $form.serialize(),
+                            beforeSubmit: function (argument) {
+                                //ajax loading icon
+                            },
+                            success: function (ajaxResponse) {
+                                try {
+                                    if (ajaxResponse.error) {
+                                        //for field error
+                                        //console.log(ajaxResponse.error_field);
+                                        for (var i = 0; i < ajaxResponse.error_field.length; i++) {
+                                            if ($('p#' + ajaxResponse.error_field[i] + '-error').length) {
+                                                $('p#' + ajaxResponse.error_field[i] + '-error').text(ajaxResponse.message[ajaxResponse.error_field[i]]);
+                                            } else {
+                                                $('#' + ajaxResponse.error_field[i]).after('<p id="' + ajaxResponse.error_field[i] + '-error" class="help-block">' + ajaxResponse.message[ajaxResponse.error_field[i]] + '</p>');
+                                            }
+                                        }
 
-                            } else {
-                                $('.lgx-form-msg').removeClass('alert-danger').addClass('alert-success').text(ajaxResponse.message);
+                                    } else {
+                                        $('.lgx-form-msg').removeClass('alert-danger').addClass('alert-success').text(ajaxResponse.message);
+                                        $('#lgx-form-modal').modal('show');
+                                        alertInterval = setInterval(function () {
+                                            $('#lgx-form-modal').modal('hide');
+                                        }, 5000);
+                                        $form[0].reset();
+                                    }
+                                } catch (e) {
+                                    console.log(e);
+                                    $('.lgx-form-msg').removeClass('alert-success').addClass('alert-danger').text('Sorry, we are failed to contact with you. Please reload the page and try again.');
+                                    $('#lgx-form-modal').modal('show');
+                                    alertInterval = setInterval(function () {
+                                        $('#lgx-form-modal').modal('hide');
+                                    }, 5000);
+                                }
+                            },
+                            error: function (argument) {
+                                $('.lgx-form-msg').removeClass('alert-success').addClass('alert-danger').text('Sorry, we can not communicate with you. Please make sure you are connected with internet.');
                                 $('#lgx-form-modal').modal('show');
                                 alertInterval = setInterval(function () {
                                     $('#lgx-form-modal').modal('hide');
                                 }, 5000);
-                                $form[0].reset();
-                            }
-                        } catch (e) {
-                            $('.lgx-form-msg').removeClass('alert-success').addClass('alert-danger').text('Sorry, we are failed to contact with you. Please reload the page and try again.');
-                            $('#lgx-form-modal').modal('show');
-                            alertInterval = setInterval(function () {
-                                $('#lgx-form-modal').modal('hide');
-                            }, 5000);
-                        }
-                    },
-                    error: function (argument) {
-                        $('.lgx-form-msg').removeClass('alert-success').addClass('alert-danger').text('Sorry, we can not communicate with you. Please make sure you are connected with internet.');
-                        $('#lgx-form-modal').modal('show');
-                        alertInterval = setInterval(function () {
-                            $('#lgx-form-modal').modal('hide');
-                        }, 5000);
-                    },
-                    complete: function () {
+                            },
+                            complete: function () {
 
-                    }
+                            }
+                        });
+                    });
                 });
 
                 return false;

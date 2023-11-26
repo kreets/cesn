@@ -113,9 +113,10 @@
 <!-- SKILLS SCRIPT  -->
 <script src="/assets/libs/jquery.validate.js"></script>
 
-<!-- if load google maps then load this api, change api key as it may expire for limit cross as this is provided with any theme -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQvRGGtL6OrpP5xVMxq_0NgiMiRhm3ycI"></script>
+<script src="https://www.google.com/recaptcha/api.js?render={{env('RECAPTCHA_SITE_KEY') }}"></script>
 
+<!-- if load google maps then load this api, change api key as it may expire for limit cross as this is provided with any theme -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_MAPS_KEY')}}"></script>
 <!-- CUSTOM GOOGLE MAP -->
 <script type="text/javascript" src="/assets/libs/gmap/jquery.googlemap.js"></script>
 
@@ -148,7 +149,7 @@
 <script src="/assets/libs/instafeed.min.js"></script>
 
 <!-- CUSTOM SCRIPT  -->
-<script src="/assets/js/custom.script.js"></script>
+<script src="/assets/js/custom.script.js?v=1.6"></script>
 
 
 

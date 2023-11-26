@@ -19,11 +19,11 @@
                                                     <div class="item">
                                                         <div  class="lgx-gallery-single">
                                                             <figure>
-                                                                <img title="{{$post->title}}" src="{{asset($image->image_path)}}" alt="{{$post->title}} {{$image->id}}"/>
+                                                                <img title="{{$post->title}}" src="{{uploaded($image->image_path)}}" alt="{{$post->title}} {{$image->id}}"/>
                                                                 <figcaption class="lgx-figcaption">
                                                                     <div class="lgx-hover-link">
                                                                         <div class="lgx-vertical">
-                                                                            <a title="{{$post->title}}" href="{{asset($image->image_path)}}">
+                                                                            <a title="{{$post->title}}" href="{{uploaded($image->image_path)}}">
                                                                                 <i class="fa fa-chain-broken" aria-hidden="true"></i>
                                                                             </a>
                                                                         </div>

@@ -11,7 +11,7 @@
                             <div class="row">
                                 <div class="col-sm-12 col-md-5">
                                     <div class="lgx-about-img">
-                                        <img src="/assets/img/about-logo.png" alt="about">
+                                        <img src="{{uploaded(getPage('rolunk')->image)}}" alt="about">
                                     </div>
                                 </div>
                                 <div class="col-sm-12 col-md-7">

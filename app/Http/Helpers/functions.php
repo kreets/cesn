@@ -26,3 +26,19 @@ function getBlogPosts($limit = null){
     }
     return $posts->get();
 }
+
+function uploaded($path) {
+    if (preg_match('/^https?:\/\//', $path)) {
+        return $path;
+    }
+
+    return asset('storage/' . ltrim($path, '/'));
+}
+
+function galleryImages($limit = null){
+    $images = \App\Models\GalleryImage::query();
+    if($limit){
+        $images->take($limit);
+    }
+    return $images->get();
+}
