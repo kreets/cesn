@@ -239,10 +239,14 @@
                             </div>
                         </div>
                         <div class="panel-body">
-                            @if(isset($dataTypeContent->image))
-                                <img src="{{ filter_var($dataTypeContent->image, FILTER_VALIDATE_URL) ? $dataTypeContent->image : Voyager::image( $dataTypeContent->image ) }}" style="width:100%" />
-                            @endif
-                            <input type="file" name="image">
+                            <div class="multiple-images">
+                                @if(isset($dataTypeContent->images) && count($dataTypeContent->images) > 0)
+                                    @foreach($dataTypeContent->images as $image)
+                                        <img src="{{ filter_var($image->image_path, FILTER_VALIDATE_URL) ? $image->image_path : Voyager::image($image->image_path) }}" style="width:100px; height:auto; margin-right: 5px;">
+                                    @endforeach
+                                @endif
+                            </div>
+                            <input type="file" name="images[]" multiple="multiple">
                         </div>
                     </div>
 

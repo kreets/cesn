@@ -4,30 +4,28 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller as BaseController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use TCG\Voyager\Models\Page;
 
-class SiteController extends BaseController{
+class PageController extends BaseController{
 
-    public function index(Request $request){
-        return view("site.index");
-    }
+    public function switcher($page){
 
-    public function about(Request $request){
-        return view("site.about");
-    }
+        $entity = Page::where('slug', $page)->first();
+        if(!$entity){
+            throw new NotFoundHttpException("Eltévedtél :(");
+        }
 
-    public function programs(Request $request){
-        return view("site.index");
-    }
+        $viewPath = 'pages.' . $page;
 
-    public function schedule(Request $request){
-        return view("site.index");
-    }
-
-    public function blog(Request $request){
-        return view("site.index");
-    }
-
-    public function contact(Request $request){
+        if (View::exists($viewPath)) {
+            // Render the specific page view
+            return view($viewPath, ['page' => $entity]);
+        } else {
+            // Render the default view
+            return view('pages.default', ['page' => $entity]);
+        }
 
     }
 

@@ -4,24 +4,23 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEventsTable extends Migration
+class CreateEventDaysTable extends Migration
 {
     public function up()
     {
-        Schema::create('events', function (Blueprint $table) {
+        Schema::create('event_days', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('slug')->unique();
-            $table->date('start_date');
-            $table->date('end_date');
-            $table->text('description')->nullable();
-            $table->string('location');
+            $table->date('date');
+            $table->foreignId('event_id')->constrained('events');
+            $table->time('start_time');
+            $table->time('end_time');
             $table->timestamps();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('events');
+        Schema::dropIfExists('event_days');
     }
 }

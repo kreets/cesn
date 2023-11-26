@@ -2,7 +2,11 @@
 
 namespace App\Providers;
 
+use App\Http\Controllers\Voyager\VoyagerExtendedController;
+use App\Models\Page;
+use App\Observers\PageObserver;
 use Illuminate\Support\ServiceProvider;
+use TCG\Voyager\Http\Controllers\VoyagerController;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +17,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+
     }
 
     /**
@@ -23,6 +27,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Page::observe(PageObserver::class);
     }
 }

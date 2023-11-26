@@ -13,11 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+Route::get('/', 'App\Http\Controllers\SiteController@index')->name('home');
+Route::get('/blog/{slug}', 'App\Http\Controllers\SiteController@blogpost')->name('blogpost');
+Route::post('/kapcsolat', 'App\Http\Controllers\SiteController@kapcsolat')->name('kapcsolat');
+Route::get('/{page}', 'App\Http\Controllers\PageController@switcher')->name('page');
+
+
+
+

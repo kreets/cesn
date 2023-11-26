@@ -4,24 +4,23 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEventsTable extends Migration
+class CreateEventLocationsTable extends Migration
 {
     public function up()
     {
-        Schema::create('events', function (Blueprint $table) {
+        Schema::create('event_locations', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('slug')->unique();
-            $table->date('start_date');
-            $table->date('end_date');
-            $table->text('description')->nullable();
-            $table->string('location');
+            $table->string('zip');
+            $table->string('city');
+            $table->string('address');
+            $table->string('map_info')->nullable(); // For Google Maps or similar
             $table->timestamps();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('events');
+        Schema::dropIfExists('event_locations');
     }
 }
