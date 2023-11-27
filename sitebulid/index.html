@@ -69,6 +69,30 @@
 
     <!-- MODERNIZER CSS  -->
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
+
+    <!--    POPUP CSS  -->
+    <link rel="stylesheet" href="assets/popup.css" media="all"/>
+
+
+    <!-- popup script  -->
+    <script>
+  
+
+  // Function to show the popup after 10 seconds
+  function showPopup() {
+    setTimeout(function () {
+      document.getElementById('popup').style.display = 'block';
+    }, 1000);
+  }
+
+  // Function to close the popup
+  function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+  }
+
+  // Call the showPopup function when the page is loaded
+  window.onload = showPopup;
+</script>
 </head>
 
 <body class="home">
@@ -81,6 +105,18 @@
 <div class="lgx-container lgx-box-layout">
 <!-- ***  ADD YOUR SITE CONTENT HERE *** -->
 
+<!-- Popup -->
+<div id="popup_alert" >
+<div id="popup" class="animate__animated animate__zoomInDown">
+
+  <h1>NYEREMÉNYJÁTÉK</h1>
+  <h5>LEGYEN TIÉD AZ EXTRÉM NYEREMÉNYEK EGYIKE!</h5>
+  <div id="buttonsContainer">
+    <div class="lgx-btn" id="continueBtn">RÉSZLETEK</div>
+    <div class="lgx-btn lgx-btn-red" id="closePopupBtn" onclick="closePopup()">X</div>
+  </div>
+</div>
+</div>
 
 <!--HEADER-->
 <header>
