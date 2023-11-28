@@ -18,11 +18,11 @@
 
                                 <div  class="lgx-gallery-single">
                                     <figure>
-                                        <img title="Memories One" src="{{uploaded($image->image_path)}}" alt=""/>
+                                        <img title="{{$image->alt}}" src="{{uploaded($image->image_path)}}" alt="{{$image->alt}}"/>
                                         <figcaption class="lgx-figcaption">
                                             <div class="lgx-hover-link">
                                                 <div class="lgx-vertical">
-                                                    <a title="" href="{{uploaded($image->image_path)}}">
+                                                    <a title="{{$image->alt}}" href="{{uploaded($image->image_path)}}">
                                                         <i class="fa fa-chain-broken" aria-hidden="true"></i>
                                                     </a>
                                                 </div>
