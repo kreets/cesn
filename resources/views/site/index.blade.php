@@ -1,6 +1,7 @@
 @extends('cesn_page')
 @section('content')
     @include('partials._banner')
+    @include('partials._popup')
     @include('partials._countdown')
     @include('partials._rolunk_short')
     @include('partials._nyeremenyjatek')

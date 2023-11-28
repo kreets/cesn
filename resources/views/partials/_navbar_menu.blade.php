@@ -14,7 +14,7 @@
 <div id="navbar" class="navbar-collapse collapse">
     <div class="lgx-nav-right navbar-right">
         <div class="lgx-cart-area">
-            <a class="lgx-btn" href="#">Nyereményjáték</a>
+            <a class="lgx-btn" onclick="showPopup()">Nyereményjáték</a>
         </div>
     </div>
     <ul class="nav navbar-nav lgx-nav navbar-right">

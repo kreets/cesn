@@ -1,0 +1,93 @@
+<?php
+
+return [
+    'data_rows'  => [
+        'author'           => 'Szerző',
+        'avatar'           => 'Avatar',
+        'body'             => 'Tartalom',
+        'category'         => 'Kategória',
+        'created_at'       => 'Létrehozva',
+        'display_name'     => 'Megjelenített név',
+        'email'            => 'Email',
+        'excerpt'          => 'Excerpt',
+        'featured'         => 'Kiemelt',
+        'id'               => 'ID',
+        'meta_description' => 'Meta Leírás',
+        'meta_keywords'    => 'Meta Kulcsszavak',
+        'name'             => 'Név',
+        'order'            => 'Sorrend',
+        'page_image'       => 'Kép',
+        'parent'           => 'Szülő',
+        'password'         => 'Jelszó',
+        'post_image'       => 'Post Image',
+        'remember_token'   => 'Remember Token',
+        'role'             => 'Role',
+        'seo_title'        => 'SEO Title',
+        'slug'             => 'Slug',
+        'status'           => 'Status',
+        'title'            => 'Title',
+        'updated_at'       => 'Updated At',
+    ],
+    'data_types' => [
+        'category' => [
+            'singular' => 'Kategória',
+            'plural'   => 'Kategóriák',
+        ],
+        'menu'     => [
+            'singular' => 'Menü',
+            'plural'   => 'Menük',
+        ],
+        'page'     => [
+            'singular' => 'Oldal',
+            'plural'   => 'Oldalak',
+        ],
+        'post'     => [
+            'singular' => 'Post',
+            'plural'   => 'Posts',
+        ],
+        'role'     => [
+            'singular' => 'Szerep',
+            'plural'   => 'Szerepek',
+        ],
+        'user'     => [
+            'singular' => 'Felhasználó',
+            'plural'   => 'Felhasználók',
+        ],
+    ],
+    'menu_items' => [
+        'bread'        => 'BREAD',
+        'categories'   => 'Kategóriák',
+        'compass'      => 'Iránytű',
+        'dashboard'    => 'Vezérlőpult',
+        'database'     => 'Adatbázis',
+        'media'        => 'Media',
+        'menu_builder' => 'Menu Builder',
+        'pages'        => 'Oldalak',
+        'posts'        => 'Posts',
+        'roles'        => 'Szerepek',
+        'settings'     => 'Beállítások',
+        'tools'        => 'Eszközök',
+        'users'        => 'Felhasználók',
+    ],
+    'roles'      => [
+        'admin' => 'Administrator',
+        'user'  => 'Normal User',
+    ],
+    'settings'   => [
+        'admin' => [
+            'background_image'           => 'Admin Background Image',
+            'description'                => 'Admin Description',
+            'description_value'          => 'Welcome to Voyager. The Missing Admin for Laravel',
+            'google_analytics_client_id' => 'Google Analytics Client ID (used for admin dashboard)',
+            'icon_image'                 => 'Admin Icon Image',
+            'loader'                     => 'Admin Loader',
+            'title'                      => 'Admin Title',
+        ],
+        'site'  => [
+            'description'                  => 'Site Description',
+            'google_analytics_tracking_id' => 'Google Analytics Tracking ID',
+            'logo'                         => 'Site Logo',
+            'title'                        => 'Site Title',
+        ],
+    ],
+];

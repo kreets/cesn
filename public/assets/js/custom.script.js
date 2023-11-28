@@ -1,3 +1,12 @@
+function showPopup() {
+    setTimeout(function () {
+        document.getElementById('popup').style.display = 'block';
+    }, 200);
+}
+
+function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+}
 
 (function($) {
     "use strict";

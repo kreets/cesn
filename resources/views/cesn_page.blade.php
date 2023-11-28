@@ -44,7 +44,6 @@
     <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png">
 
-
     <!-- BOOTSTRAP CSS -->
     <link rel="stylesheet" href="/assets/libs/bootstrap/css/bootstrap.min.css" media="all"/>
     <!-- FONT AWESOME -->
@@ -67,6 +66,9 @@
 
     <!-- MODERNIZER CSS  -->
     <script src="/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+
+    <!--    POPUP CSS  -->
+    <link rel="stylesheet" href="/assets/css/popup.css" media="all"/>
 </head>
 
 <body class="home">
@@ -149,12 +151,7 @@
 <script src="/assets/libs/instafeed.min.js"></script>
 
 <!-- CUSTOM SCRIPT  -->
-<script src="/assets/js/custom.script.js?v=1.6"></script>
-
-
-
-
-
+<script src="/assets/js/custom.script.js?v=1.8"></script>
 
 
 </body>

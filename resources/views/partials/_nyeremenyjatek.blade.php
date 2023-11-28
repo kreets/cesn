@@ -7,11 +7,10 @@
                     <div class="col-xs-12">
                         <div class="lgx-registration-area-simple">
                             <div class="lgx-heading lgx-heading-white">
-                                <h2 class="heading">nyereményjáték!</h2>
-                                <h3 class="subheading">Legyél a szerencsés nyertesek közt!
-                                    <br>Legyen tiéd az extrém ajándékok egyike!</h3>
+                                <h2 class="heading">{{getPage('nyeremenyjatek')->title}}!</h2>
+                                <h3 class="subheading">{{getPage('nyeremenyjatek')->subtitle}}</h3>
                             </div>
-                            <a class="lgx-btn lgx-btn-red" href="#">Részletek</a>
+                            <a class="lgx-btn lgx-btn-red" href="{{route('page', 'nyeremenyjatek')}}">Részletek</a>
                         </div>
                     </div>
                 </div>
