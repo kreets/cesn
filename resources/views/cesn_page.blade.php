@@ -94,7 +94,7 @@
         </div>
     </header>
     <!--HEADER END-->
-
+    @include('partials._popup')
     @yield('content')
 
     @include('partials._footer')
@@ -151,7 +151,60 @@
 <script src="/assets/libs/instafeed.min.js"></script>
 
 <!-- CUSTOM SCRIPT  -->
-<script src="/assets/js/custom.script.js?v=1.8"></script>
+<script src="/assets/js/custom.script.js?v=1.11"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        /*=========================================================================
+         ===  GOOGLE MAP
+         ========================================================================== */
+        if (typeof google != 'undefined') {
+            //for Default  map
+            if ($('.map-canvas-default').length) {
+                $(".map-canvas-default").googleMap({
+                    zoom: 13, // Initial zoom level (optiona
+                    coords: [{{getCurrentEvent()->location->map_info}}], // Map center (optional)
+                    type: "ROADMAP", // Map type (optional),
+                    mouseZoom: false
+                });
+
+                //for marker
+                $(".map-canvas-default").addMarker({
+                    coords: [{{getCurrentEvent()->location->map_info}}], // GPS coords
+                    title: '{{getCurrentEvent()->location->name}}',
+                    text: '{{getCurrentEvent()->location->composedAddress()}}',
+                    icon: lgx_path + '/assets/img/map/map-icon.png'
+                });
+            }
+
+            // FOR DARK MAP
+            if ($('.map-canvas-dark').length) {
+                $(".map-canvas-dark").googleMap({
+                    zoom: 2, // Initial zoom level (optiona
+                    coords: [{{getCurrentEvent()->location->map_info}}], // Map center (optional)
+                    type: "HYBRID", // Map type (optional),
+                    mouseZoom: false
+                });
+
+                //for marker
+                $(".map-canvas-dark").addMarker({
+                    coords: [{{getCurrentEvent()->location->map_info}}], // GPS coords
+                    title: '{{getCurrentEvent()->location->name}}',
+                    text: '{{getCurrentEvent()->location->composedAddress()}}',
+                    icon: lgx_path + '/assets/img/map/map-icon.png'
+                });
+            }
+        }
+
+
+        /*=========================================================================
+         ===  //GOOGLE MAP END
+         ========================================================================== */
+    });
+</script>
+$(document.ready)
+
+
 
 
 </body>

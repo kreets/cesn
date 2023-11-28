@@ -8,6 +8,8 @@ function closePopup() {
     document.getElementById('popup').style.display = 'none';
 }
 
+window.onload = showPopup;
+
 (function($) {
     "use strict";
 
@@ -426,53 +428,6 @@ function closePopup() {
          ===  Typed Animation END
          ========================================================================== */
 
-
-
-        /*=========================================================================
-         ===  GOOGLE MAP
-         ========================================================================== */
-        if (typeof google != 'undefined') {
-            //for Default  map
-            if ($('.map-canvas-default').length) {
-                $(".map-canvas-default").googleMap({
-                    zoom: 8, // Initial zoom level (optiona
-                    coords: [40.7127, 74.0059], // Map center (optional)
-                    type: "ROADMAP", // Map type (optional),
-                    mouseZoom: false
-                });
-
-                //for marker
-                $(".map-canvas-default").addMarker({
-                    coords: [40.7127, 74.0059], // GPS coords
-                    title: 'Eventpoint',
-                    text: '121 King St, Melbourne VIC 3000, Australia',
-                    icon: lgx_path + '/assets/img/map/map-icon.png'
-                });
-            }
-
-            // FOR DARK MAP
-            if ($('.map-canvas-dark').length) {
-                $(".map-canvas-dark").googleMap({
-                    zoom: 8, // Initial zoom level (optiona
-                    coords: [40.7127, 74.0059], // Map center (optional)
-                    type: "HYBRID", // Map type (optional),
-                    mouseZoom: false
-                });
-
-                //for marker
-                $(".map-canvas-dark").addMarker({
-                    coords: [40.7127, 74.0059], // GPS coords
-                    title: 'Eventpoint',
-                    text: '121 King St, Melbourne VIC 3000, Australia',
-                    icon: lgx_path + '/assets/img/map/map-icon.png'
-                });
-            }
-        }
-
-
-        /*=========================================================================
-         ===  //GOOGLE MAP END
-         ========================================================================== */
 
 
 
