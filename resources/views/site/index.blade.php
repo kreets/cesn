@@ -9,4 +9,10 @@
     @include('partials._galeria')
     @include('partials._blog', ["limit" => 2])
     @include('partials._google_maps')
+
+@endsection
+@section('extrajs')
+    <script type="text/javascript">
+        window.onload = showPopup;
+    </script>
 @endsection

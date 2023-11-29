@@ -8,8 +8,6 @@ function closePopup() {
     document.getElementById('popup').style.display = 'none';
 }
 
-window.onload = showPopup;
-
 (function($) {
     "use strict";
 

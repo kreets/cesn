@@ -13,9 +13,10 @@
                             Kövess be a<br> legfrissebb hírekért!
                         </p>
                         <ul class="list-inline lgx-social-footer">
-                            <li><a href="{{setting('site.social_facebook_link')}}"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                            <li><a href="{{setting('site.social_instagram_link')}}"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                            <li><a href="{{setting('site.social_youtube_link')}}"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                            <li><a target="_blank" href="{{setting('site.social_facebook_link')}}"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a target="_blank" href="{{setting('site.social_instagram_link')}}"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                            <li><a target="_blank" href="{{setting('site.social_youtube_link')}}"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                            <li><a target="_blank" href="{{setting('site.social_tiktok_link')}}"><i class="fa-brands fa-tiktok" aria-hidden="true"></i></a></li>
                         </ul>
                     </div>
                     <div class="lgx-footer-single">

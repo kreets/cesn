@@ -26,9 +26,9 @@
     <!-- facebook open graph ends from here -->
 
     <!--  FAVICON AND TOUCH ICONS -->
-    <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicon.ico"/>
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicon.ico?i"/>
     <!-- this icon shows in browser toolbar -->
-    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico"/>
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico?o"/>
     <!-- this icon shows in browser toolbar -->
     <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/favicon/apple-icon-60x60.png">
@@ -151,7 +151,7 @@
 <script src="/assets/libs/instafeed.min.js"></script>
 
 <!-- CUSTOM SCRIPT  -->
-<script src="/assets/js/custom.script.js?v=1.11"></script>
+<script src="/assets/js/custom.script.js?v=1.12"></script>
 
 <script type="text/javascript">
     $(document).ready(function() {
@@ -173,7 +173,7 @@
                     coords: [{{getCurrentEvent()->location->map_info}}], // GPS coords
                     title: '{{getCurrentEvent()->location->name}}',
                     text: '{{getCurrentEvent()->location->composedAddress()}}',
-                    icon: lgx_path + '/assets/img/map/map-icon.png'
+                    icon: '/assets/img/map/map-icon2.png'
                 });
             }
 
@@ -191,7 +191,7 @@
                     coords: [{{getCurrentEvent()->location->map_info}}], // GPS coords
                     title: '{{getCurrentEvent()->location->name}}',
                     text: '{{getCurrentEvent()->location->composedAddress()}}',
-                    icon: lgx_path + '/assets/img/map/map-icon.png'
+                    icon: '/assets/img/map/map-icon2.png'
                 });
             }
         }
@@ -202,9 +202,8 @@
          ========================================================================== */
     });
 </script>
-$(document.ready)
 
-
+@yield('extrajs')
 
 
 </body>

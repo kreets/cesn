@@ -12,9 +12,7 @@
                         <div class="col-xs-12">
                             <article>
                                 <header>
-                                    <figure>
-                                        <img src="assets/img/bannar5.jpg" alt="New"/>
-                                    </figure>
+
                                     <div class="text-area">
                                         <div class="hits-area">
 
