@@ -43,7 +43,7 @@
                                 <section>
                                     {!! $post->body !!}
                                 </section>
-                                <footer>
+                                <!--footer>
                                     <div class="row">
                                         <div class="col-xs-12">
                                             <h4 class="title">Share</h4>
@@ -58,7 +58,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </footer>
+                                </footer-->
                             </article>
                         </div>
                     </div>
@@ -69,3 +69,8 @@
     </main>
 
 @endsection
+
+
+@section('page_meta_description')Ceglédi Extrémsport nap - Blog - {{$post->meta_description}}@endsection
+@section('page_meta_keywords'){{$post->meta_keywords}}@endsection
+@section('page_title')Ceglédi Extrémsport nap - Blog - {{$post->title}}@endsection
