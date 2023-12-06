@@ -7,7 +7,7 @@
     </button>
     <div class="lgx-logo">
         <a href="{{route('home')}}" class="lgx-scroll">
-            <img src="/assets/img/logo.png" alt="cex logo"/>
+            <img src="/storage/{{setting('site.logo')}}" alt="Ceglédi Extrémsport nap"/>
         </a>
     </div>
 </div>

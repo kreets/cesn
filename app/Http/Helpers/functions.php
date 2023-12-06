@@ -9,6 +9,7 @@ function getPrograms($limit = null){
     $programs = \App\Models\EventProgram::whereHas('eventDay', function ($query) use ($activeEvent) {
         $query->where('event_id', $activeEvent->id);
     });
+    $programs->orderBy('spotlight', 'DESC');
     if($limit){
         $programs->take($limit);
     }

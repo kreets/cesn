@@ -34,5 +34,4 @@
     </main>
     @include('partials._program_list', ["limit" => 6])
 @endsection
-
 @include('pages._meta_tags')

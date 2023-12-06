@@ -5,9 +5,7 @@
 @endif
 
 @if(!is_null($page->meta_description))
-@section('page_meta_description')
-    {{ $page->meta_description }}
-@endsection
+@section('page_meta_description'){{ $page->meta_description }}@endsection
 @endif
 
 @if(!is_null($page->title))

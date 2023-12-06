@@ -13,17 +13,22 @@
     <meta name="author" content="hegeshow.com"/>
 
 
-
     <!-- facebook open graph starts from here, if you don't need then delete open graph related  -->
-    <meta property="og:title" content="@yield('page_meta_description', 'Ceglédi extrém sportnap')""/>
+    <meta property="og:title" content="@yield('page_meta_description', 'Ceglédi extrém sportnap')"/>
     <meta property="og:url" content="{{ url()->current() }}"/>
     <meta property="og:locale" content="hu_HU"/>
     <meta property="og:site_name" content="{{setting('site.title')}}"/>
     <!--meta property="fb:admins" content="" /-->  <!-- use this if you have  -->
     <meta property="og:type" content="website"/>
-    <meta property="og:image" content="assets/img/opengraph/fbphoto.jpg"/>
+    <meta property="og:image" content="{{url('/storage')}}/{{setting('site.seo_graph_image')}}"/>
     <!-- when you post this page url in facebook , this image will be shown -->
     <!-- facebook open graph ends from here -->
+
+    <meta name="twitter:card" content="{{setting('site.title')}}" />
+    <meta name="twitter:site" content="{{setting('site.title')}}" />
+    <meta name="twitter:title" content="@yield('page_meta_description', 'Ceglédi extrém sportnap')" />
+    <meta name="twitter:description" content="@yield('page_meta_description', 'Ceglédi extrém sportnap')" />
+    <meta name="twitter:image" content="{{url('/storage')}}/{{setting('site.seo_twittercard')}}" />
 
     <!--  FAVICON AND TOUCH ICONS -->
     <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicon.ico?i"/>
@@ -173,7 +178,7 @@
                     coords: [{{getCurrentEvent()->location->map_info}}], // GPS coords
                     title: '{{getCurrentEvent()->location->name}}',
                     text: '{{getCurrentEvent()->location->composedAddress()}}',
-                    icon: '/assets/img/map/map-icon2.png'
+                    icon: '{{url('storage')}}/{{setting('site.google_map_pin')}}'
                 });
             }
 
@@ -191,7 +196,7 @@
                     coords: [{{getCurrentEvent()->location->map_info}}], // GPS coords
                     title: '{{getCurrentEvent()->location->name}}',
                     text: '{{getCurrentEvent()->location->composedAddress()}}',
-                    icon: '/assets/img/map/map-icon2.png'
+                    icon: '{{url('storage')}}/{{setting('site.google_map_pin')}}'
                 });
             }
         }
