@@ -25,7 +25,7 @@
                                 @foreach(getCurrentEvent()->eventDays as $day)
                                     <div id="day{{$day->id}}" class="tab-pane fade in @if($loop->first) active @endif">
                                         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                                            @foreach($day->eventPrograms()->get() as $program)
+                                            @foreach($day->eventPrograms()->orderby('list_order', 'ASC')->get() as $program)
                                                 <div class="panel panel-default lgx-panel">
                                                     <div class="panel-heading" role="tab" id="headingProg{{$program->id}}">
                                                         <div class="panel-title">

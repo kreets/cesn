@@ -93,7 +93,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'hu',
 
     /*
     |--------------------------------------------------------------------------
@@ -106,7 +106,7 @@ return [
     |
     */
 
-    'faker_locale' => 'en_US',
+    'faker_locale' => 'hu_HU',
 
     /*
     |--------------------------------------------------------------------------
@@ -118,7 +118,7 @@ return [
     | will not be safe. Please do this before deploying an application!
     |
     */
-
+    'useAcceptLanguageHeader' => false,
     'key' => env('APP_KEY'),
 
     'cipher' => 'AES-256-CBC',
@@ -161,7 +161,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
+        Spatie\CookieConsent\CookieConsentServiceProvider::class,
         /*
          * Package Service Providers...
          */

@@ -28,4 +28,5 @@ class EventProgram extends Model
     public function getImage(){
         return $this->image ?? self::PLACEHOLDER;
     }
+
 }

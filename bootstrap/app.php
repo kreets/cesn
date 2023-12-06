@@ -31,8 +31,6 @@ $app->singleton(
     App\Http\Kernel::class
 );
 
-$app->useStoragePath("/home/kreets/develop/cesn/storage");
-
 $app->singleton(
     Illuminate\Contracts\Console\Kernel::class,
     App\Console\Kernel::class
