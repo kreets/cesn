@@ -67,7 +67,7 @@
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Oswald:400,700%7cRaleway:300,400,400i,500,600,700,900"/>
 
     <!-- MASTER  STYLESHEET  -->
-    <link id="lgx-master-style" rel="stylesheet" href="/assets/css/style-default.min.css?v=2" media="all"/>
+    <link id="lgx-master-style" rel="stylesheet" href="/assets/css/style-default.min.css?v=3" media="all"/>
 
     <!-- MODERNIZER CSS  -->
     <script src="/assets/js/vendor/modernizr-2.8.3.min.js"></script>
