@@ -1,6 +1,6 @@
 <!--ABOUT-->
 <section>
-    <div id="rolunk" class="lgx-about lgx-about2">
+    <div id="rolunk" class="lgx-about lgx-about2" style="background: url({{url('storage')}}/{{setting('site.about_cover_image')}}) bottom no-repeat;">
         <div class="lgx-inner">
             <div class="container">
                 <div class="row">

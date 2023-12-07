@@ -31,8 +31,9 @@
                         <a id="myModalLabel2" data-toggle="modal" data-target="#lgx-modal-map" class="map-link" href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> Térkép</a>
                     </div>
                     <div class="lgx-footer-single">
-                        <h2 class="footer-title">Instagram Feed</h2>
+                        <h2 class="footer-title">TikTok Feed</h2>
                         <div id="instafeed">
+                            {!! setting('site.tiktok_feed_iframe') !!}
                         </div>
                     </div>
                 </div>
