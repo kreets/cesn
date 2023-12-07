@@ -19,10 +19,10 @@
                                 <a class="profile-img"><img src="{{uploaded($program->getImage())}}" alt="{{$program->title}}"/></a>
                                 <figcaption>
                                     <div class="social-group">
-                                        <a class="sp-tw" href="#"><i class="fa fa-twitter"></i></a>
-                                        <a class="sp-fb" href="#"><i class="fa fa-facebook"></i></a>
-                                        <a class="sp-insta" href="#"><i class="fa fa-instagram"></i></a>
-                                        <a class="sp-in" href="#"><i class="fa fa-linkedin"></i></a>
+                                        @if($program->twitter) <a class="sp-tw" href="{{$program->twitter}}"><i class="fa fa-twitter"></i></a> @endif
+                                        @if($program->facebook)<a class="sp-fb" href="{{$program->facebook}}"><i class="fa fa-facebook"></i></a> @endif
+                                        @if($program->instagram)<a class="sp-insta" href="{{$program->instagram}}"><i class="fa fa-instagram"></i></a> @endif
+
                                     </div>
                                     <div class="speaker-info">
                                         <h3 class="title"><a >{{$program->title}}</a></h3>
