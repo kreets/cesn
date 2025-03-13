@@ -1,8 +1,20 @@
+// Function to show the popup after 10 seconds
+function showPopup() {
+    setTimeout(function () {
+        document.getElementById('popup').style.display = 'block';
+    }, 1000);
+}
+
+// Function to close the popup
+function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+}
 
 (function($) {
     "use strict";
 
     $(document).ready(function() {
+
 
 
         /*=========================================================================
@@ -138,10 +150,10 @@
             $('#lgx-countdown').countdown(dataTime, function(event) {
                 var $this = $(this).html(event.strftime(''
                     /*+ '<span class="lgx-weecks">%w <i> weeks </i></span> '*/
-                    + '<span class="lgx-days">%D <i> Nap </i></span> '
-                    + '<span class="lgx-hr">%H <i> Óra </i></span> '
-                    + '<span class="lgx-min">%M <i> Perc </i></span> '
-                    + '<span class="lgx-sec">%S <i> Másodperc </i></span>'
+                    + '<span class="lgx-days">%D <i> Days </i></span> '
+                    + '<span class="lgx-hr">%H <i> Hour </i></span> '
+                    + '<span class="lgx-min">%M <i> Minu </i></span> '
+                    + '<span class="lgx-sec">%S <i> Seco </i></span>'
                 ));
             });
         }

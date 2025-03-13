@@ -155,7 +155,14 @@
 
 <!-- CUSTOM SCRIPT  -->
 <script src="/assets/js/custom.script.js?v=1.13"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NK20V9NC93"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
+    gtag('config', 'G-NK20V9NC93');
+</script>
 <script type="text/javascript">
     $(document).ready(function() {
         /*=========================================================================
